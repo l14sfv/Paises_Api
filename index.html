@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Where in the world?</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="topbar">
+        <div class="container topbar__inner">
+            <h1 class="brand" data-i18n="appTitle">Where in the world?</h1>
+
+        <div class="topbar__actions">
+            <button class="toolbar-btn" id="languageToggle" type="button" aria-label="Switch language">
+                <span class="toolbar-btn__icon">🌐</span>
+                <span id="languageToggleText">Español</span>
+            </button>
+
+            <button class="toolbar-btn" id="themeToggle" type="button" aria-label="Switch theme">
+                <span class="toolbar-btn__icon">🌙</span>
+                <span id="themeToggleText">Dark Mode</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main id="main-content">
+    <section class="controls">
+        <div class="container controls__inner" id="homeControls">
+            <label class="search-box" for="searchInput">
+                <span class="search-box__icon">🔎</span>
+            <input
+                id="searchInput"
+                type="text"
+                data-i18n-placeholder="searchPlaceholder"
+                placeholder="Search for a country..."
+        />
+        </label>
+
+        <label class="region-filter">
+            <span class="sr-only" data-i18n="filterLabel">Filter by Region</span>
+            <select id="regionSelect" aria-label="Filter by region">
+            <option value="all" data-i18n="filterAll">Filter by Region</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">America</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+            </select>
+        </label>
+    </div>
+    </section>
+
+    <section class="countries-view container" id="countriesView">
+        <div class="countries-grid" id="countriesGrid"></div>
+            <p class="empty-state hidden" id="emptyState" data-i18n="noResults">
+            No countries match your search.
+            </p>
+    </section>
+
+    <section class="detail-view container hidden" id="detailView">
+        <button class="back-btn" id="backButton" type="button">
+        ←   <span data-i18n="back">Back</span>
+        </button>
+        <div class="detail-card" id="detailCard"></div>
+    </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
